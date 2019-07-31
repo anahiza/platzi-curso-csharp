@@ -28,6 +28,20 @@ namespace CoreEscuela
             WriteLine($"Objeto: {ob.UniqueId.ToString()}");
              WriteLine($"Objeto: {ob.GetType()}");
 
+            var eval = new Evaluación(){Nombre="Matematicas", Nota=4.5f};
+       Printer.WriteTitle("Evaluacion");
+            WriteLine($"Evaluacion: {eval.UniqueId.ToString()}");
+             WriteLine($"Evaluacion: {eval.Nota}");
+             WriteLine($"Evaluacion: {eval.GetType()}");
+
+             ob=eval;
+                         Printer.WriteTitle("Objeto Escuela");
+            WriteLine($"Objeto: {ob.UniqueId.ToString()}");
+             WriteLine($"Objeto: {ob.GetType()}");
+
+
+
+
             var listaObjetos = engine.GetObjetosEscuela();
         }
 
