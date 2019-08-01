@@ -54,25 +54,63 @@ namespace CoreEscuela
 
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela()
+
+        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+            out int conteoEvaluaiones,
+            out int conteoAsignaturas,
+            out int conteoCursos,
+            out int conteoAlumnos,
+            bool evaluaciones = true, 
+            bool alumnos=true, 
+            bool asignaturas = true, 
+            bool cursos=true
+            )
         {
+            conteoEvaluaiones=0;
+            conteoAlumnos=0;
+            conteoCursos=0;
+            conteoAsignaturas=0;
+
             var listaObj = new List<ObjetoEscuelaBase>();
             listaObj.Add(Escuela);
-            listaObj.AddRange(Escuela.Cursos);
+            
+            if (cursos)
+            {
+                listaObj.AddRange(Escuela.Cursos);
+                conteoCursos=Escuela.Cursos.Count();                
+            }
 
+        
             foreach (var curso in Escuela.Cursos)
             {
-                listaObj.AddRange(curso.Asignaturas);
-                listaObj.AddRange(curso.Alumnos);
-
-                foreach (var alumno in curso.Alumnos)
+                if (asignaturas)
                 {
-                    listaObj.AddRange(alumno.Evaluaciones);
+                    listaObj.AddRange(curso.Asignaturas);
+                    conteoAsignaturas+=curso.Asignaturas.Count();
+
+                }
+                
+                if (alumnos)
+                {
+                    listaObj.AddRange(curso.Alumnos);
+                    conteoAlumnos+=curso.Alumnos.Count();
+
+                }
+
+                if (evaluaciones)
+                {
+                    foreach (var alumno in curso.Alumnos)
+                    {
+                        listaObj.AddRange(alumno.Evaluaciones);
+                        conteoEvaluaiones+=alumno.Evaluaciones.Count();
+                    }
+
                 }
             }
 
             return listaObj;
         }
+
 #region Cargas Iniciales
         private void CargarAsignaturas()
         {

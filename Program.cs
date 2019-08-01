@@ -17,8 +17,8 @@ namespace CoreEscuela
             //Printer.Beep(10000, cantidad: 10);
             ImpimirCursosEscuela(engine.Escuela);
 
-            var listaObjetos = engine.GetObjetosEscuela();
-
+            var listaObjetos = engine.GetObjetosEscuela(evaluaciones:true, alumnos: false, cursos: false);
+            
             var listaIlugar = from obj in listaObjetos
                             where obj is Alumno
                             select obj;
