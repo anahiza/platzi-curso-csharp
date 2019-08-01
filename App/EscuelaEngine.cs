@@ -110,6 +110,29 @@ namespace CoreEscuela
             return listaObj;
         }
 
+        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+            bool evaluaciones = true, 
+            bool alumnos=true, 
+            bool asignaturas = true, 
+            bool cursos=true
+        )
+        {   
+
+            return GetObjetosEscuela(out int dummy, out dummy, out dummy, out dummy);
+        }
+
+          public List<ObjetoEscuelaBase> GetObjetosEscuela(
+             out int conteoEvaluaciones, 
+            bool evaluaciones = true, 
+            bool alumnos=true, 
+            bool asignaturas = true, 
+            bool cursos=true
+        )
+        {   
+
+            return GetObjetosEscuela(out conteoEvaluaciones, out int dummy, out dummy, out dummy);
+        }
+
 #region Cargas Iniciales
         private void CargarAsignaturas()
         {
