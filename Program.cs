@@ -21,6 +21,8 @@ namespace CoreEscuela
             {
                 WriteLine(ob.ToString());
             }
+
+
         }
 
         private static void ImpimirCursosEscuela(Escuela escuela)
