@@ -94,7 +94,6 @@ namespace CoreEscuela
                 {
                     listaObj.AddRange(curso.Alumnos);
                     conteoAlumnos+=curso.Alumnos.Count();
-
                 }
 
                 if (evaluaciones)
