@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
 using static System.Console;
@@ -17,10 +18,13 @@ namespace CoreEscuela
             ImpimirCursosEscuela(engine.Escuela);
 
             var listaObjetos = engine.GetObjetosEscuela();
-            foreach (var ob in listaObjetos)
-            {
-                WriteLine(ob.ToString());
-            }
+
+            var listaIlugar = from obj in listaObjetos
+                            where obj is Alumno
+                            select obj;
+
+            engine.Escuela.LimpiarLugar();
+
 
 
         }
