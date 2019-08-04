@@ -16,22 +16,14 @@ namespace CoreEscuela
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
             //Printer.Beep(10000, cantidad: 10);
             ImpimirCursosEscuela(engine.Escuela);
+            Dictionary<string, string> diccionario = new Dictionary<string, string>();
+           
 
-            var listaObjetos = engine.GetObjetosEscuela(
-            out int conteoEvaluaiones,
-            out int conteoAsignaturas,
-            out int conteoCursos,
-            out int conteoAlumnos,
-                evaluaciones:false, 
-                alumnos: true, 
-                cursos: false, 
-                asignaturas:true);
-            
-            var listaIlugar = from obj in listaObjetos
-                            where obj is Alumno
-                            select obj;
+            //engine.Escuela.LimpiarLugar();
 
-            engine.Escuela.LimpiarLugar();
+
+
+      
 
 
 
@@ -51,5 +43,7 @@ namespace CoreEscuela
                 }
             }
         }
+
+       
     }
 }

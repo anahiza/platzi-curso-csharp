@@ -14,6 +14,8 @@ namespace CoreEscuela
 
         }
 
+
+
         public void Inicializar()
         {
             Escuela = new Escuela("Platzi Academy", 2012, TiposEscuela.Primaria,
@@ -54,8 +56,9 @@ namespace CoreEscuela
 
         }
 
+        
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
             out int conteoEvaluaiones,
             out int conteoAsignaturas,
             out int conteoCursos,
@@ -107,10 +110,10 @@ namespace CoreEscuela
                 }
             }
 
-            return listaObj;
+            return listaObj.AsReadOnly();
         }
 
-        public List<ObjetoEscuelaBase> GetObjetosEscuela(
+        public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
             bool evaluaciones = true, 
             bool alumnos=true, 
             bool asignaturas = true, 
@@ -121,7 +124,7 @@ namespace CoreEscuela
             return GetObjetosEscuela(out int dummy, out dummy, out dummy, out dummy);
         }
 
-          public List<ObjetoEscuelaBase> GetObjetosEscuela(
+          public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
              out int conteoEvaluaciones, 
             bool evaluaciones = true, 
             bool alumnos=true, 
