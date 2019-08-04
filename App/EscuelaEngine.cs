@@ -56,7 +56,17 @@ namespace CoreEscuela
 
         }
 
-        
+        public Dictionary<string, IEnumerable<ObjetoEscuelaBase>> GetDiccionarioObjetos(){
+            Dictionary<string, IEnumerable<ObjetoEscuelaBase>> diccionario = new Dictionary<string, IEnumerable<ObjetoEscuelaBase>>();
+
+            diccionario.Add("Escuela",new[] {Escuela});
+            diccionario.Add("Cursos", Escuela.Cursos.Cast<ObjetoEscuelaBase>());
+            foreach(var c in Escuela.Cur)
+            diccionario.Add("Alumnos", Escuela)
+            
+
+            return diccionario;
+        }
 
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(
             out int conteoEvaluaiones,
