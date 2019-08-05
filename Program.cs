@@ -25,7 +25,7 @@ namespace CoreEscuela
             //engine.Escuela.LimpiarLugar();   
             var reporteador = new Reporteador(diccionario);
      
-            reporteador.GetListaAsignaturas();
+            reporteador.GetListaEvaluacionxAsignatura();
             
         }
 
