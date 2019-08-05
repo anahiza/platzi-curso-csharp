@@ -18,7 +18,7 @@ namespace CoreEscuela
             ImpimirCursosEscuela(engine.Escuela);
 
             var diccionario= engine.GetDiccionarioObjetos();
-            engine.ImprimirDiccionario(diccionario);
+            engine.ImprimirDiccionario(diccionario,true);
 
             //engine.Escuela.LimpiarLugar();
 

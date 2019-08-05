@@ -46,7 +46,7 @@ namespace CoreEscuela
                             {
                                 Asignatura = asignatura,
                                 Nombre = $"{asignatura.Nombre} Ev#{i + 1}",
-                                Nota = (float)(5 * rnd.NextDouble()),
+                                Nota = (float)Math.Round(10 * rnd.NextDouble(),2),
                                 Alumno = alumno
                             };
                             alumno.Evaluaciones.Add(ev);
@@ -88,7 +88,7 @@ namespace CoreEscuela
             return diccionario;
         }
 
-        public void ImprimirDiccionario(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dic)
+        public void ImprimirDiccionario(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dic, bool imprimirEval = false)
         {
             foreach(var obj in dic)
             {
@@ -96,7 +96,32 @@ namespace CoreEscuela
                 
                 foreach(var key in obj.Value)
                 {
-                    Console.WriteLine(key.ToString());
+                    switch(obj.Key)
+                    {
+                        case LlaveDiccionario.Evaluaciones:
+                            if(imprimirEval)
+                                Console.WriteLine(key.ToString());
+                        break;
+                        case LlaveDiccionario.Alumnos:
+                            Console.WriteLine(key.Nombre);
+                        break;
+                        case LlaveDiccionario.Escuela:
+                            Console.WriteLine("Escuela :"+key);
+                        break;
+                        case LlaveDiccionario.Cursos:
+                            var curtmp = key as Curso;
+                            if (curtmp !=null)
+                            {
+                                int count = ((Curso) key).Alumnos.Count();
+                                Console.WriteLine($"Curso: {key.Nombre} {count} alumnos");
+                            }
+                        break;
+
+                        default:
+                            Console.WriteLine(key.ToString());
+                        break;
+
+                    }                 
 
                 }
                 
