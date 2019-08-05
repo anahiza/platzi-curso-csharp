@@ -11,6 +11,7 @@ namespace CoreEscuela
     {
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.ProcessExit+=accionEvento;
             var engine = new EscuelaEngine();
             engine.Inicializar();
             Printer.WriteTitle("BIENVENIDOS A LA ESCUELA");
@@ -20,13 +21,15 @@ namespace CoreEscuela
             var diccionario= engine.GetDiccionarioObjetos();
             engine.ImprimirDiccionario(diccionario,true);
 
-            //engine.Escuela.LimpiarLugar();
+            //engine.Escuela.LimpiarLugar();   
 
 
 
-      
+        }
 
-
+        private static void accionEvento(object sender, EventArgs e)
+        {
+            Printer.WriteTitle("Exiting Program ...");
 
         }
 
