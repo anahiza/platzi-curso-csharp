@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CoreEscuela.Entidades;
+using CoreEscuela.Util;
 
 namespace CoreEscuela
 {
@@ -85,6 +86,21 @@ namespace CoreEscuela
             
 
             return diccionario;
+        }
+
+        public void ImprimirDiccionario(Dictionary<LlaveDiccionario, IEnumerable<ObjetoEscuelaBase>> dic)
+        {
+            foreach(var obj in dic)
+            {
+                Printer.WriteTitle(obj.Key.ToString());
+                
+                foreach(var key in obj.Value)
+                {
+                    Console.WriteLine(key.ToString());
+
+                }
+                
+            }
         }
 
         public IReadOnlyList<ObjetoEscuelaBase> GetObjetosEscuela(

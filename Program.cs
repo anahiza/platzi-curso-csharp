@@ -17,7 +17,8 @@ namespace CoreEscuela
             //Printer.Beep(10000, cantidad: 10);
             ImpimirCursosEscuela(engine.Escuela);
 
-            engine.GetDiccionarioObjetos();
+            var diccionario= engine.GetDiccionarioObjetos();
+            engine.ImprimirDiccionario(diccionario);
 
             //engine.Escuela.LimpiarLugar();
 
