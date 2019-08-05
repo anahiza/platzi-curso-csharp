@@ -24,9 +24,7 @@ namespace CoreEscuela
 
             //engine.Escuela.LimpiarLugar();   
             var reporteador = new Reporteador(diccionario);
-
-
-
+            
         }
 
         private static void accionEvento(object sender, EventArgs e)
