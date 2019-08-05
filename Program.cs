@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CoreEscuela.Entidades;
 using CoreEscuela.Util;
+using CoreEscuela.App;
 using static System.Console;
 
 namespace CoreEscuela
@@ -19,9 +20,10 @@ namespace CoreEscuela
             ImpimirCursosEscuela(engine.Escuela);
 
             var diccionario= engine.GetDiccionarioObjetos();
-            engine.ImprimirDiccionario(diccionario,true);
+            //engine.ImprimirDiccionario(diccionario,true);
 
             //engine.Escuela.LimpiarLugar();   
+            var reporteador = new Reporteador(diccionario);
 
 
 
