@@ -70,15 +70,22 @@ namespace CoreEscuela.App
             var listaEvalxAsig = GetListaEvaluacionxAsignatura();
             foreach(var asignatura in listaEvalxAsig)       
             {
-                var dummy = from ev in asignatura.Value
-                        group ev by ev.Alumno.UniqueId
+                var promediosAlumnos = from ev in asignatura.Value
+                        group ev by new {
+                            ev.Alumno.UniqueId, 
+                            ev.Alumno.Nombre
+                        }
                         into grupoEvaluacionesAlumno                 
-                        select new {
-                                AlumnoID = grupoEvaluacionesAlumno.Key,
-                                Promedio = grupoEvaluacionesAlumno.Average( evaluacion => evaluacion.Nota)
+                        select new  AlumnoPromedio{
+                                alumnoId = grupoEvaluacionesAlumno.Key.UniqueId,
+                                Nombre = grupoEvaluacionesAlumno.Key.Nombre,
+                                promedio= grupoEvaluacionesAlumno.Average( evaluacion => evaluacion.Nota)
+                         
+
                         };
+                        
                 
-            
+                res.Add(asignatura.Key,promediosAlumnos);
             }     
 
             return res;
