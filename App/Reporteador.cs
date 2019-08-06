@@ -63,5 +63,25 @@ namespace CoreEscuela.App
 
             return dic;
         }
+
+        public Dictionary<string, IEnumerable<object>> GetPromedioAlumnosxAsignatura()
+        {
+            var res = new Dictionary<string, IEnumerable<object>> ();
+            var listaEvalxAsig = GetListaEvaluacionxAsignatura();
+            foreach(var asignatura in listaEvalxAsig)       
+            {
+                var dummy = from ev in asignatura.Value
+                        group ev by ev.Alumno.UniqueId
+                        into grupoEvaluacionesAlumno                 
+                        select new {
+                                AlumnoID = grupoEvaluacionesAlumno.Key,
+                                Promedio = grupoEvaluacionesAlumno.Average( evaluacion => evaluacion.Nota)
+                        };
+                
+            
+            }     
+
+            return res;
+        }
     }
 }

@@ -25,7 +25,8 @@ namespace CoreEscuela
             //engine.Escuela.LimpiarLugar();   
             var reporteador = new Reporteador(diccionario);
      
-            reporteador.GetListaEvaluacionxAsignatura();
+
+            reporteador.GetPromedioAlumnosxAsignatura();
             
         }
 
