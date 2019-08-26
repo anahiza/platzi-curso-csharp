@@ -27,6 +27,15 @@ namespace CoreEscuela
      
 
             reporteador.GetPromedioAlumnosxAsignatura();
+
+            Printer.WriteTitle("Captura de una evaluación por consola");
+            var newEval = new Evaluación();
+            string nombre;
+            float nota;
+            WriteLine("Ingrese el nombre de la evaluación");
+            Printer.PressEnter();
+
+
             
         }
 
