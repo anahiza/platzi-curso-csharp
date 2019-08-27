@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\END USER\\Downloads\\platzi-curso-csharp-Etapa5\\platzi-curso-csharp-Etapa5\\Etapa5.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\END USER\\Downloads\\platzi-curso-csharp-Etapa5\\platzi-curso-csharp-Etapa5\\Etapa5.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\END USER\\Downloads\\platzi-curso-csharp-Etapa5\\platzi-curso-csharp-Etapa5\\Etapa5.csproj",
+        "projectName": "Etapa5",
+        "projectPath": "C:\\Users\\END USER\\Downloads\\platzi-curso-csharp-Etapa5\\platzi-curso-csharp-Etapa5\\Etapa5.csproj",
+        "packagesPath": "C:\\Users\\END USER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\END USER\\Downloads\\platzi-curso-csharp-Etapa5\\platzi-curso-csharp-Etapa5\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\END USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
